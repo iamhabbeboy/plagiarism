@@ -1,0 +1,57 @@
+
+{% include 'header.html' %}
+
+<title> View Project Write-up </title>
+</head>
+
+<body>
+  <nav style="background: #000 !important">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
+        <li><a href="/add-new"><i class="fa fa-plus-circle"></i> Add New </a></li>
+        <li><a href="/view"><i class="fa fa-signal"></i> View All</a></li>
+      </ul>
+    </div>
+  </nav>
+
+ 
+  <div class="row">
+  <div class="col s6 offset-s3">
+    <h4 class="green-text"> View All Project Write Up</h4>
+
+    <p>
+        <b class="red-text">Note: </b>
+        Please copy and paste the write up into the textarea below, then fill other fields before clicking on save button. 
+    </p>
+
+    {% if data.None %}
+     <h4> No Record Found </h4>
+    {% else %}
+      <table class="striped">
+        <tr>
+            <th width="30%"> Project Sub </th>
+            <th width="70%"> Project Write Up </th>
+       
+        </tr>
+        {% for x in data %}
+         <tr>
+             <td> {{ data[x] }} </td>
+             <td> {{ doc[x] }}</td>
+             
+         </tr>
+        {% endfor %}
+      </table>
+    {% endif %} 
+     
+     
+      <br><br>
+      <a href="/">Home </a> &copy; 
+ <br>
+ <br>
+
+  </div>
+  </div>
+</body>
+</html>

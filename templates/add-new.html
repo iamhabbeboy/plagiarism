@@ -1,0 +1,61 @@
+
+{% include 'header.html' %}
+<title> Add New Project Write-up </title>
+</head>
+
+<body>
+  <nav style="background: #000 !important">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
+        <li><a href="/add-new"><i class="fa fa-plus-circle"></i> Add New </a></li>
+        <li><a href="/view"><i class="fa fa-signal"></i> View All</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <form method="POST">
+  <div class="row">
+  <div class="col s6 offset-s3">
+    <h4 class="green-text"> Add New Project Write Up</h4>
+
+    <p>
+        <b class="red-text">Note: </b>
+        Please copy and paste the write up into the textarea below, then fill other fields before clicking on save button. 
+    </p>
+
+  <label for="year"> Year </label>
+   <input type="text" placeholder="Project Year" id="year">
+ 
+   <label for="doc"> Select Document Type </label>
+   <select name="doc_type" class="browser-default " id="doc">
+     <option value="0"> --select --</option>
+     <option value="introduction">Introduction </option>
+     <option value="methodology">Methodology</option>
+   </select>
+    <label> Enter your Document </label> <br>
+    <textarea class="materialize-textarea" name="document"></textarea>
+    <br>
+
+    <button type="submit" class="btn pink">
+     <i class="fa fa-floppy-o"></i> Save
+    </button>
+
+    <button class="btn black">
+     <i class="fa fa-times"></i> Cancel
+    </button>
+    
+      </form>
+      <br><br>
+      <a href="/">Home </a> &copy; 
+ <br>
+ <br>
+
+ <p>
+     {{ data }}
+ </p>
+  </div>
+  </div>
+</body>
+</html>

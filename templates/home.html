@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+{% include 'header.html' %}
+
+<title> Plagiarism Checker </title>
+
+</head>
+
+<body class="homeBody">
+  <form method="POST">
+  <div class="row" >
+    <br><br><br>
+   
+  <div class="col s6 offset-s3 body-white animated bounceIn">
+    <h3 class="Raleway pink-text"> Plagiarism Checker </h3>
+   
+   <label> Select Document Type </label>
+   <select name="doc_type" class="browser-default option-select">
+     <option value="0"> --select --</option>
+     <option value="introduction">Introduction </option>
+     <option value="methodology">Methodology</option>
+   </select>
+    <label> Enter your Document </label> <br>
+    <textarea class="materialize-textarea" name="document"></textarea>
+    <br>
+
+    <button type="submit" class="btn pink">
+      <i class="fa fa-search"></i> Check Status
+    </button>
+
+    <button class="btn black"><i class="fa fa-times"></i> Cancel </button>
+    
+      </form>
+      <br><br>
+      <div class="divider"></div>
+      
+      {% if counter %}
+        <h5 class="green-text">You check for this document for existence</h5>
+      
+      {% if counter > 1 %}
+       <b class="red-text"> String Matched {{counter}} Sentences </b>
+      {% else %}
+       <b class="red-text"> String Matched {{counter}} Sentence </b>
+      {% endif %}
+      {% endif %}
+      <br><br>
+
+     
+      <div>
+        {% if data %}
+        <table class="striped">
+          <tr>
+            <th> Content Found </th>
+            <th> Year </th>
+            
+          </tr>
+          {% for x in data %}
+          <tr>
+            <td> {{x}} </td>
+            <td> asd </td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% endif %}
+      </div>
+  </div>
+  </div>
+</body>
+</html>

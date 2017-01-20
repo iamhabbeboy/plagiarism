@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <title> About Page </title>
+  <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap.min.css')}}">
+   <link rel="stylesheet" href="{{url_for('static', filename='vendor/flat-ui.min.css')}}">
+ </head>
+ <body style="margin: 0px auto">
+   <div style="padding: 10px;background: #000;color: #FFF">
+  	<b> Python Flask </b>
+    </div>
+   
+   <div class="col-md-6 col-md-offset-3">
+      <h2> Result </h2>
+      Welcome back,
+      {% for i in data %}
+       <p> {{ i['users'].encode('ascii','ignore')}} </p>
+      {% endfor %}
+
+   </div>
+</body>
+</html>
