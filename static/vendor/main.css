@@ -1,34 +1,92 @@
 @font-face {
-  font-family: 'Khand-Bold';
-  src: url(../fonts/Khand-Bold.ttf);
-}
+  font-family: "Khand-Bold";
+  src: url(../fonts/Khand-Bold.ttf); }
+@font-face {
+  font-family: "Raleway-ExtraLight";
+  src: url(../fonts/Raleway-ExtraLight.ttf); }
 
 @font-face {
-  font-family: 'Raleway-ExtraLight';
-  src: url(../fonts/Raleway-ExtraLight.ttf);
-}
+  font-family: "Font-Normal";
+  src: url(../fonts/font-normal.woff); }
 
 .Raleway {
-  font-family: 'Raleway-ExtraLight';
-}
+  font-family: "Raleway-ExtraLight"; }
 
 .homeBody {
-  background: url("../images/banner.jpg");
-}
+  background: url("../images/banner.jpg"); }
 
 .body-white {
   background: #FFFFFF;
-  border: 10px solid #999 !important;
-}
+  border: 10px solid #999 !important; }
 
-.option-select {
-  font-weight: bold;
-  text-transform: uppercase !important;
+.option-select{
+	font-weight: bold;
+	text-transform:uppercase !important;
 }
 
 .sidelayout-nav {
   position: fixed;
-  width: 20%;
-  height: 100%;
-  background: #000;
+	width: 20%;
+	height: 100%;
+	background: #000;
+  border-right: 2px solid #e91e63;
 }
+
+.sidelayout-div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  color: #FFF;
+  background: #333;
+  font-family: 'Khand-Bold';
+}
+
+.sidelayout-nav  li {
+  padding: 15px;
+  border-bottom: 1px solid #666;
+}
+
+.sidelayout-nav li:hover {
+  background: transparent;
+  cursor: pointer;
+  border-left: 4px solid #333;
+}
+
+
+.sidelayout-nav li a {
+  color: #e91e63 !important;
+  font-weight: bold;
+}
+
+.inner-design {
+  border-bottom: 2px solid #666;
+}
+
+.topics-registered{
+  text-align: center !important;
+}
+
+.circle {
+   float: left;
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   border: 4px solid #e91e63 !important;
+   padding-top: 25px;
+   margin-left: 25px;
+   margin-right: 25px;
+}
+
+.topics-registered {
+    color: #000;
+}
+
+.topics-registered h4 {
+  color: #444;
+}
+
+.img-dashboard {
+  width: 100%;
+  max-width: 800px;
+}
+/*# sourceMappingURL=main.css.map */

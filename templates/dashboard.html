@@ -7,24 +7,47 @@
   
   <div class="">
 
-    <div class="sidelayout-nav">
-        
-        <ul>
-          <li>
-            <a href="#">Home </a>
-          </li>
-          <li>
-            <a href="#">Add Write Up </a>
-          </li>
-        </ul>
-    </div>
+   {% include "navigation.html" %}
+   
     <div class="row">
       
-    <div class="col s5 offset-s3">
-      
-        <h3> Hello, world ! </h3>
+
+    <div class="col s6 offset-s3">
+      <div class="inner-design">
+        <h3 class="pink-text Raleway"> Welcome to Admin Dashboard </h3>
+      </div>
+      <br>
+      <div>
+        Welcome back, <b>Habbeboy !</b>
+      </div>
+      <br>
+
+      <img src="{{ url_for('static', filename='images/woman.jpg')}}" border="0" class="img-dashboard">
+
+      <div class="row topics-registered">
+         <div class="circle">
+            <h4> 120 </h4>
+            <div>Topic Registered Today</div>
+         </div>
+          <div class="circle">
+         
+            <h4> 50 </h4>
+            <div> Total Topic Registered </div>
+         </div>
+         <div class="circle">
+           
+            <h4> 80 </h4>
+             <div> Project Write Up </div>
+         </div> 
+      </div>
+
+      <br>
+
+   
     </div>
     </div>
   </div>
+  
+  <script src="{{ url_for('static', filename='scripts/materialize.min.js')}}"></script>
 </body>
 </html>

@@ -1,57 +1,83 @@
 
 {% include 'header.html' %}
+<title> Plagiarism Checker ::Dashboard </title>
 
-<title> View Project Write-up </title>
+  <script src="{{ url_for('static', filename='scripts/jquery.js')}}"></script>
+   <script src="{{ url_for('static', filename='scripts/materialize.min.js')}}"></script>
+<script src="{{url_for('static', filename='scripts/app.js')}}"></script>
+
+<script>
+  $(document).ready(function() {
+
+      Materialize.updateTextFields();
+      $('select').material_select();
+      var app = new App();
+      app.add_new();
+      app.max_character('#txt', 100);
+  });
+
+</script>
 </head>
 
 <body>
-  <nav style="background: #000 !important">
-    <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
-        <li><a href="/add-new"><i class="fa fa-plus-circle"></i> Add New </a></li>
-        <li><a href="/view"><i class="fa fa-signal"></i> View All</a></li>
-      </ul>
-    </div>
-  </nav>
 
- 
-  <div class="row">
-  <div class="col s6 offset-s3">
-    <h4 class="green-text"> View All Project Write Up</h4>
+  <div class="">
 
-    <p>
-        <b class="red-text">Note: </b>
-        Please copy and paste the write up into the textarea below, then fill other fields before clicking on save button. 
-    </p>
+   {% include "navigation.html" %}
+    <div class="row">
 
-    {% if data.None %}
-     <h4> No Record Found </h4>
-    {% else %}
-      <table class="striped">
-        <tr>
-            <th width="30%"> Project Sub </th>
-            <th width="70%"> Project Write Up </th>
-       
-        </tr>
-        {% for x in data %}
-         <tr>
-             <td> {{ data[x] }} </td>
-             <td> {{ doc[x] }}</td>
-             
-         </tr>
-        {% endfor %}
-      </table>
-    {% endif %} 
-     
-     
+
+    <div class="col s6 offset-s3">
+      <div class="inner-design">
+        <h3 class="pink-text Raleway"> Add Project Write Up </h3>
+      </div>
+      <br>
+      <div>
+        Welcome back, <b>Habbeboy !</b>
+      </div>
+      <br>
+
+      {% if doc.None %}
+       <h4 class="grey-text"> No Record Found </h4>
+      {% else %}
+       <b class="green-text"><small>TOTAL RECORD: {{ rowcount }} </small></b>
+       <div class="divider"></div>
+        <table class="striped">
+          <tr>
+              <th > Topic</th>
+              <th > Heading </th>
+              <th> Matric No. </th>
+              <th> Level </th>
+              <th > Supervisor </th>
+              <th> Option </th>
+          </tr>
+          {% for x in doc %}
+           <tr>
+               <td valign="top"><small> {{ x.topic.upper() }} </small></td>
+               <td> {{ x.doc_type }}</td>
+               <td> {{ x.matric }} </td>
+               <td> {{ x.level }} </td>
+               <td> {{ x.supervisor}} </td>
+               <td> <a href="#" class="green-text" title="view project content"><i class="fa fa-chevron-circle-right"></i></a> /
+                  <a href="#" class="red-text" title="delete"><i class="fa fa-info-circle"></i></a> </td>
+           </tr>
+          {% endfor %}
+        </table>
+
+      {% endif %}
+
       <br><br>
-      <a href="/">Home </a> &copy; 
+      <a href="/">Home </a> &copy;
  <br>
  <br>
 
+
+      <br>
+
+
+    </div>
+    </div>
   </div>
-  </div>
+
 </body>
 </html>

@@ -1,61 +1,129 @@
 
 {% include 'header.html' %}
-<title> Add New Project Write-up </title>
+<title> Plagiarism Checker ::Dashboard </title>
+
+  <script src="{{ url_for('static', filename='scripts/jquery.js')}}"></script>
+   <script src="{{ url_for('static', filename='scripts/materialize.min.js')}}"></script>
+<script src="{{url_for('static', filename='scripts/app.js')}}"></script>
+
+<script>
+  $(document).ready(function() {
+
+      Materialize.updateTextFields();
+      $('select').material_select();
+      var app = new App();
+      app.add_new();
+      app.max_character('#txt', 100);
+  });
+
+</script>
 </head>
 
 <body>
-  <nav style="background: #000 !important">
-    <div class="nav-wrapper container">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/"><i class="fa fa-home"></i> Home </a></li>
-        <li><a href="/add-new"><i class="fa fa-plus-circle"></i> Add New </a></li>
-        <li><a href="/view"><i class="fa fa-signal"></i> View All</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <form method="POST">
-  <div class="row">
-  <div class="col s6 offset-s3">
-    <h4 class="green-text"> Add New Project Write Up</h4>
+  <div class="">
+
+   {% include "navigation.html" %}
+    <div class="row">
+
+
+    <div class="col s6 offset-s3">
+      <div class="inner-design">
+        <h3 class="pink-text Raleway"> Add Project Write Up </h3>
+      </div>
+      <br>
+      <div>
+        Welcome back, <b>Habbeboy !</b>
+      </div>
+      <br>
 
     <p>
         <b class="red-text">Note: </b>
-        Please copy and paste the write up into the textarea below, then fill other fields before clicking on save button. 
+        Please copy and paste the write up into the textarea below, then fill other fields before clicking on save button.
     </p>
 
-  <label for="year"> Year </label>
-   <input type="text" placeholder="Project Year" id="year">
- 
-   <label for="doc"> Select Document Type </label>
-   <select name="doc_type" class="browser-default " id="doc">
+
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" placeholder="secured web based todo app" id="topic" required>
+      <label for="topic"> Project Topic </label>
+    </div>
+
+    <div class="input-field col s12">
+      <input type="text" placeholder="John Doe" id="supervisor" required>
+      <label for="supervisor"> Super Visor</label>
+    </div>
+
+    <div class="input-field col s12">
+      <input type="text" placeholder="2017" id="year" required>
+      <label for="year"> Year </label>
+    </div>
+
+    <div class="input-field col s12">
+      <select name="level" class="browser-default" id="level" required data-id='true'>
+        <option value="0"> -- Level select --</option>
+        <option value="NDII">NDII </option>
+        <option value="HNDII">HNDII</option>
+      </select>
+    </div>
+    <p>
+      &nbsp;
+    </p>
+
+    <div class="input-field col s12">
+      <input type="text" placeholder="00/69/000, 00/69/0000" id="matric" required>
+      <label for="matric"> Matric No. <small><b class="red-text">(add comma if its a group project)</b></small> </label>
+    </div>
+
+    <div class="input-field col s12">
+   <select name="doc_type[]" class="typer browser-default" id="doc" required data-id='true'>
      <option value="0"> --select --</option>
      <option value="introduction">Introduction </option>
      <option value="methodology">Methodology</option>
    </select>
-    <label> Enter your Document </label> <br>
-    <textarea class="materialize-textarea" name="document"></textarea>
+    <!-- <label for="doc"> Select Document Type </label> -->
+    </div>
+
+    <div class="input-field col s12">
+
+    <textarea class="materialize-textarea doc" name="document[]" data-id='true' id="txt" required></textarea>
+    <label for="txt">Project Write Up </label>
+      <small>Characters: <span data-list="#txt" >0</span> /65,000</small>
+    </div>
+
+    <div class="input-field col s12" id="show-more">
+    </div>
+
+    <a class="btn-flat waves-effect waves-light red" title="clicking on this button shows that you want to add more of this student write up" id="add-new"><i class="fa fa-plus-circle"></i> Add More </a>
+
+  </div>
+
     <br>
 
-    <button type="submit" class="btn pink">
+    <button id="projectSubmit" class=" waves-effect waves-light btn-flat pink white-text">
      <i class="fa fa-floppy-o"></i> Save
     </button>
 
-    <button class="btn black">
+    <button type="reset" class="waves-effect waves-light btn-flat black">
      <i class="fa fa-times"></i> Cancel
     </button>
-    
-      </form>
+
+
       <br><br>
-      <a href="/">Home </a> &copy; 
+      <a href="/">Home </a> &copy;
  <br>
  <br>
 
  <p>
      {{ data }}
  </p>
+
+      <br>
+
+
+    </div>
+    </div>
   </div>
-  </div>
+
 </body>
 </html>

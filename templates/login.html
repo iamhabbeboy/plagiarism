@@ -5,8 +5,7 @@
     <script>
       var app = new App();
       //app.login();
-   
-   
+
     </script>
 
 </head>
@@ -14,11 +13,12 @@
 <body bgcolor="#000">
   <!--<form method="POST" id="formLogin">-->
   <div class="row">
-    
+
   <div class="col s4 offset-s4 animated fadeIn" style="background: #FFF;padding: 20px;margin-top: 45px">
     <h3 class="pink-text Raleway"> Login </h3>
     <div class="divider"></div>
     <br>
+    <form method="POST">
    <label for="email"> Email Address </label>
    <input type="text" name="email" placeholder="name@domain.com" id="email">
 
@@ -26,13 +26,13 @@
    <input type="password" name="pass" id="pass">
     <br>
 
-    <button type="submit" class="btn-flat pink white-text" onclick="app.login(event)">
+    <button type="submit" class="btn-flat pink white-text">
         Continue <i class="fa fa-chevron-circle-right"></i>
     </button>
-    
-      <!--</form>-->
+
+      </form>
   </div>
-  
+
   </div>
 
      <center class="grey-text"> <a href="/" >Home </a> &nbsp; | &copy; copyright </center>
